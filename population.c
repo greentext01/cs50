@@ -7,12 +7,12 @@ int main(void) {
   int i = 0;
 
   do {
-    start = get_int("Start size: ");
-  } while (start <= 9);
+      do {
+        start = get_int("Start size: ");
+      } while (start <= 9);
 
-  do {
     end = get_int("End size: ");
-  } while (end <= start);
+  } while (end < start);
 
   while (start < end) {
     i++;
