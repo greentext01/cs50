@@ -26,7 +26,7 @@ string getNum(string prompt, int* size) {
 }
 
 bool checkValid(string cc_num, int cc_num_size) {
-  if (cc_num_size > 19) {
+  if (cc_num_size > 16 || cc_num_size < 13) {
     return 0;
   }
   char mult_digits[100];
