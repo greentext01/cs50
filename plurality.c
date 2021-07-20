@@ -66,8 +66,10 @@ int main(int argc, string argv[])
 // Update vote totals given a new vote
 bool vote(string name)
 {
-    for(int i = 0; i < candidate_count; i++) {
-        if(strcmp(candidates[i].name, name) == 0) {
+    for (int i = 0; i < candidate_count; i++) 
+    {
+        if (strcmp(candidates[i].name, name) == 0) 
+        {
             candidates[i].votes++;
             return true;
         }
@@ -83,9 +85,9 @@ void merge(candidate arr[], int l, int m, int r)
     int idxr = m + 1;
     int idxTgt = 0;
 
-    while(idxl <= m && idxr <= r)
+    while (idxl <= m && idxr <= r)
     {
-        if(arr[idxl].votes < arr[idxr].votes)
+        if (arr[idxl].votes < arr[idxr].votes)
         {
             tgtArr[idxTgt++] = arr[idxl++];
         }
@@ -96,23 +98,24 @@ void merge(candidate arr[], int l, int m, int r)
     }
 
 
-    while(idxl <= m)
+    while (idxl <= m)
     {
         tgtArr[idxTgt++] = arr[idxl++];
     }
-    while(idxr <= r)
+    while (idxr <= r)
     {
         tgtArr[idxTgt++] = arr[idxr++];
     }
-    for(int i=l;i<=r;++i)
+    for (int i = l; i <= r; ++i)
     {
-        arr[i] = tgtArr[i-l];
+        arr[i] = tgtArr[i - l];
     }
 }
 
 void mergeSort(candidate arr[], int l, int r)
 {
-    if(r > l) {
+    if (r > l) 
+    {
         int m = (l + r) / 2;
         // left
         mergeSort(arr, l, m);
@@ -128,10 +131,14 @@ void mergeSort(candidate arr[], int l, int r)
 void print_winner(void)
 {
     mergeSort(candidates, 0, candidate_count - 1);
-    for(int i = candidate_count - 1; i >= 0; i--) {
-        if(candidates[i].votes == candidates[candidate_count - 1].votes) {
+    for (int i = candidate_count - 1; i >= 0; i--) 
+    {
+        if (candidates[i].votes == candidates[candidate_count - 1].votes) 
+        {
             printf("%s\n", candidates[i].name);
-        } else {
+        } 
+        else 
+        {
             return;
         }
     }
