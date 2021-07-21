@@ -11,9 +11,6 @@ size_t count_sentences(string str);
 int main()
 {
     string str = get_string("Text: ");
-    printf("%lu letter(s)\n", count_letters(str));
-    printf("%lu words(s)\n", count_words(str));
-    printf("%lu sentences(s)\n", count_sentences(str));
     double letPer100w = (double)count_letters(str) * 100 / (double)count_words(str);
     double sentPer100w = (double)count_sentences(str) * 100 / (double)count_words(str);
     int grade = round(0.0588 * letPer100w - 0.296 * sentPer100w - 15.8);
