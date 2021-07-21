@@ -16,7 +16,7 @@ int main()
     int grade = round(0.0588 * letPer100w - 0.296 * sentPer100w - 15.8);
     if (grade < 1)
     {
-        printf("%s\n", "Before grade 1");
+        printf("%s\n", "Before Grade 1");
     }
     else if (grade > 16)
     {
