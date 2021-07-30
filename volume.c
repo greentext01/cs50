@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
     fread(header, 44, 1, input);
     fwrite(header, 44, 1, output);
 
-    while(fread(&sample, 2, 1, input))
+    while (fread(&sample, 2, 1, input))
     {
         sample *= factor;
         fwrite(&sample, 2, 1, output);
