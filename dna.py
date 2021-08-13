@@ -6,7 +6,11 @@ import re
 def str_repeat(str, dna):
     matches = re.findall(rf"(({str})+)", dna)
 
+    if len(matches) == 0:
+        return 0
+
     return len(max(matches)[0]) / len(str)
+
 
 def main():
     if(len(sys.argv) != 3):
@@ -34,6 +38,7 @@ def main():
             return
 
     print("No match")
+
 
 if __name__ == "__main__":
     main()
