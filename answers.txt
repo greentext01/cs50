@@ -1,0 +1,3 @@
+The THIEF is:Vincent
+The thief ESCAPED TO:London
+The ACCOMPLICE is:Jack
