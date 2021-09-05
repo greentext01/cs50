@@ -183,7 +183,7 @@ def register():
 
         if len(check) != 0:
             return apology("Username already taken")
-        
+
         if request.form.get("username") == "":
             return apology("Username is empty")
 
@@ -229,10 +229,12 @@ def sell():
                        session["user_id"], request.form.get("symbol"))
 
         db.execute(
-            "INSERT INTO transactions (symbol, amount, time, price, userid) VALUES (?, ?, ?, ?, ?)", request.form.get("symbol"), int(request.form.get("shares")) * -1, time.asctime(time.gmtime()), lookup(request.form.get("symbol"))["price"],
-             session["user_id"])
+            "INSERT INTO transactions (symbol, amount, time, price, userid) VALUES (?, ?, ?, ?, ?)", request.form.get("symbol"), int(
+                request.form.get("shares")) * -1, time.asctime(time.gmtime()), lookup(request.form.get("symbol"))["price"],
+            session["user_id"])
 
-        db.execute("UPDATE users SET cash = cash + ?", lookup(request.form.get("symbol"))["price"] * int(request.form.get("shares")))
+        db.execute("UPDATE users SET cash = cash + ?", lookup(request.form.get("symbol"))
+                   ["price"] * int(request.form.get("shares")))
 
         return redirect("/")
     else:
