@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="134.6971mm"
+   height="42.168308mm"
+   viewBox="0 0 134.6971 42.168308"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   sodipodi:docname="goggle.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="0.51906082"
+     inkscape:cx="-116.55667"
+     inkscape:cy="336.18411"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="1072"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-33.562362,-152.13942)">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:41.5861px;line-height:1.25;font-family:Jost;-inkscape-font-specification:'Jost Medium';stroke-width:1.03965"
+       x="31.98209"
+       y="184.57658"
+       id="text2366"
+       inkscape:export-filename="C:\Users\oaude\cs50\goggle.png"
+       inkscape:export-xdpi="370.48672"
+       inkscape:export-ydpi="370.48672"><tspan
+         sodipodi:role="line"
+         id="tspan2364"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-family:Jost;-inkscape-font-specification:'Jost Medium';stroke-width:1.03965"
+         x="31.98209"
+         y="184.57658"><tspan
+           style="fill:#4086f4;fill-opacity:1;stroke-width:1.03965"
+           id="tspan9748">G</tspan><tspan
+           style="fill:#eb4132;fill-opacity:1;stroke-width:1.03965"
+           id="tspan8084">o</tspan><tspan
+           style="fill:#fbbd01;fill-opacity:1;stroke-width:1.03965"
+           id="tspan27838">g</tspan><tspan
+           style="fill:#4086f4;fill-opacity:1;stroke-width:1.03965"
+           id="tspan31302">g</tspan><tspan
+           style="fill:#31a952;fill-opacity:1;stroke-width:1.03965"
+           id="tspan33188">l</tspan><tspan
+           style="fill:#eb4132;fill-opacity:1;stroke-width:1.03965"
+           id="tspan36124">e</tspan></tspan></text>
+  </g>
+</svg>

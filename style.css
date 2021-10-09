@@ -1,0 +1,93 @@
+.searchbar {
+  border: 1px;
+  border-style: solid;
+  border-color: lightgray;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 999px;
+  min-width: 100%;
+}
+.searchbar:hover {
+  box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+}
+
+.buttonwrap {
+  display: flex;
+  justify-content: center;
+}
+
+.searchbutton {
+  background-color: #f7f7f7;
+  border-style: none;
+  color: black;
+  padding: 10px 20px;
+  margin: 25px 5px;
+  border-radius: 3px;
+}
+.searchbutton:hover {
+  box-shadow: 0px 0px 3px #858585;
+}
+
+.search {
+  margin-top: 30px;
+  justify-content: center;
+}
+
+.logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  width: 80%;
+}
+
+.searchwrap {
+  display: flex;
+  justify-content: center;
+}
+
+.advanced {
+  font-family: sans-serif;
+  color: #db3232;
+  font-size: 20px;
+}
+
+.advanced-input {
+  border-style: solid;
+  border-width: 1px;
+  border-color: lightgray;
+  padding: 3px;
+}
+.advanced-input:focus {
+  border-color: #0379e7;
+  outline: none;
+  box-shadow: inset 0 0 1px #000000;
+}
+
+.advanced-submit {
+  background-color: #416ada;
+  color: white;
+  font-weight: 500;
+  font-size: 13px;
+  padding: 5px 10px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #3455af;
+  width: min-content;
+  margin-left: auto;
+}
+
+.flex {
+  display: flex;
+  justify-content: right;
+}
+
+.advanced-form {
+  margin-right: 200px;
+  display: grid;
+  grid-template-columns: 200px auto;
+  gap: 10px;
+}
+
+/*# sourceMappingURL=style.css.map */
