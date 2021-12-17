@@ -1,0 +1,91 @@
+{% extends "auctions/layout.html" %}
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+{% block body %}
+{% if not listing.closed %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col p-0">
+            <h2>Listing: {{ listing.name }}</h2>
+        </div>
+        {% if user == listing.owner %}
+        <div class="col ml-auto">
+            <div class="float-right">
+                <form action="{% url 'close' listing.pk %}" method="post">
+                    {% csrf_token %}
+                    <button class="btn btn-danger" type="submit">Close auction</button>
+                </form>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <img src="{% if listing.thumbnail %} {{ listing.thumbnail }} {% else %} {% static 'auctions/placeholder.jpg' %} {% endif %}"
+            alt="{{ listing.name }}" class="listing-thumbnail">
+
+        <div class="m-3">
+            <h3 class="text-primary">{{ listing.name }}</h3>
+            {% if user.is_authenticated %}
+
+            <div class="my-3">
+                <form action="{% url 'bid' id=listing.pk %}" method="post">
+                    {% csrf_token %}
+
+                    <div class="form-row">
+                        <div class="col-sm">
+                            <input type="number" name="bid" class="form-control form-control-sm"
+                                min="{{ price|add:1 }}">
+                        </div>
+                        <div class="col-sm">
+                            <button type="submit" class="btn btn-primary btn-sm">Bid</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            {% endif %}
+            <div class="font-weight-bold">${{ price }}</div>
+            <p class="m-2">{{ listing.description }}</p>
+
+            {% if user.is_authenticated %}
+            <form action="{% url 'toggle-watchlist' listing.pk %}" method="post">
+                {% csrf_token %}
+                <input class="btn btn-primary btn-sm" type="submit" value="Watchlist">
+            </form>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<hr>
+
+<form action="{% url 'comment' listing.pk %}" method="post">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="comment">
+            <h4>Comment</h4>
+        </label>
+        <textarea name="comment" class="form-control" id="comment" rows="3"></textarea>
+    </div>
+    <input type="submit" class="btn btn-primary" value="Post">
+</form>
+
+{% for comment in comments %}
+<div class="card mt-3">
+    <div class="card-header">
+        {{ comment.owner }}
+    </div>
+    <div class="card-body">
+        {{ comment }}
+    </div>
+</div>
+{% endfor %}
+
+{% else %}
+<h1 class="display-3">This auction has been closed</h1>
+<h1>Winner: {{ winning }}</h1>
+{% endif %}
+{% endblock %}

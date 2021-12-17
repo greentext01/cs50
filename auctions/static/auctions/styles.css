@@ -1,0 +1,15 @@
+.card-img-top {
+  height: 50vmin;
+  object-fit: contain;
+}
+
+.listing-thumbnail {
+  object-fit: contain;
+  width: 100%;
+  max-width: 700px;
+}
+
+.description {
+  font-family: inherit;
+  font-size: inherit;
+}

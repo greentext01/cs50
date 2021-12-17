@@ -1,0 +1,36 @@
+{% extends "auctions/layout.html" %}
+{% load static %}
+
+{% block body %}
+{% block head %}
+{% endblock %}
+
+<div class="container-fluid">
+    <div class="row">
+        {% for listing in listings %}
+        <div class="m-1 p-0 col-xl">
+            <div class="card h-100">
+                <a href="{% url 'listings' listing.listing.pk %}">
+
+                    <img class="card-img-top p-2" src="{% if listing.listing.thumbnail %}
+                        {{ listing.listing.thumbnail }}
+                    {% else %}
+                        {% static 'auctions/placeholder.jpg' %}
+                    {% endif %}" alt="{{ listing.listing.name }}">
+
+                </a>
+                <div class="card-body">
+                    <a href="{% url 'listings' listing.listing.pk %}">
+                        <h5 class="card-title">{{ listing.listing.name }}</h5>
+                    </a>
+                    <div class="font-weight-bold">${{ listing.price }}</div>
+                    Category: <a href="{% url 'category' listing.listing.category %}">{{ listing.category }}</a>
+                    <pre class="m-2 description">{{ listing.listing.description }}</pre>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
