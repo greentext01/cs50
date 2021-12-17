@@ -1,0 +1,10 @@
+{% extends 'encyclopedia/layout.html' %}
+
+{% block title %}
+Error: {{ status }}
+{% endblock %}
+
+{% block body %}
+<h1>{{ status }}</h1>
+<h4>{{ message }}</h4>
+{% endblock %}
