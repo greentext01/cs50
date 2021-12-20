@@ -11,6 +11,8 @@ int main(int argc, char *argv[])
         return 1;
     }
 
+    // Verify key
+
     if (strlen(argv[1]) != 26)
     {
         puts("Key must contain 26 characters.");
@@ -19,24 +21,28 @@ int main(int argc, char *argv[])
 
     for (size_t i = 0; i < 26; i++)
     {
-        if (!isalpha(argv[1][i])) {
+        if (!isalpha(argv[1][i]))
+        {
             puts("Key must be only alphabetic characters.");
             return 1;
         }
-        
-        for(size_t j=i+1; j<strlen(argv[1]); j++)
+
+        for (size_t j = i + 1; j < strlen(argv[1]); j++)
         {
-            if(argv[1][i] == argv[1][j])
+            if (argv[1][i] == argv[1][j])
             {
                 puts("Key must be only unique characters.");
                 return 1;
             }
         }
     }
-    
+
     string plaintext = get_string("plaintext: ");
-    
+
     printf("ciphertext: ");
+    
+    // Encrypt
+    
     for (size_t i = 0; i < strlen(plaintext); i++)
     {
         if (isalpha(plaintext[i]))
