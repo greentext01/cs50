@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
     }
 
     string plaintext = get_string("plaintext: ");
-    printf("cyphertext: ");
+    printf("ciphertext: ");
     for (size_t i = 0; i < strlen(plaintext); i++)
     {
         if (isalpha(plaintext[i]))
