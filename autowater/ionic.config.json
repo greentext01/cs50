@@ -1,0 +1,7 @@
+{
+  "name": "Autowater",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

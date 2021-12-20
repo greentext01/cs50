@@ -1,0 +1,6 @@
+{
+	"appId": "dev.oliveman.autowater",
+	"appName": "Autowater",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}
