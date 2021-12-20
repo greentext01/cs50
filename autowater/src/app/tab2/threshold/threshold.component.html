@@ -1,0 +1,11 @@
+<form (ngSubmit)="onSubmit()">
+    <ion-list>
+        <ion-item>
+            <ion-input [(ngModel)]="model.threshold" name="threshold" type="number" placeholder="Threshold"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-input [(ngModel)]="model.password" name="password" type="password" placeholder="Pasword"></ion-input>
+        </ion-item>
+    </ion-list>
+    <ion-button type="submit" expand="block">Add threshold</ion-button>
+</form>
