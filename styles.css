@@ -1,0 +1,53 @@
+.sub {
+  margin: 40px;
+}
+
+.title {
+  font-size: 50vh;
+}
+
+[data-theme="dark"] .title {
+  padding: 40px;
+  background-color: rgb(26, 26, 26);
+  color: white;
+}
+
+[data-theme="light"] .title {
+  padding: 40px;
+  background-color: rgb(216, 216, 216);
+  color: black;
+}
+
+[data-theme="dark"] .project {
+  background-color: rgb(26, 26, 26);
+}
+
+[data-theme="light"] .project {
+  background-color: white;
+}
+
+button {
+  background-color: cornflowerblue;
+  border-radius: 10px;
+  border: none;
+}
+
+.info {
+  margin: 20px;
+  width: 30%;
+  font-size: 18px;
+}
+
+[data-theme="dark"] {
+  background-color: rgb(39, 39, 39);
+  color: white;
+}
+
+.themechange {
+  position: absolute;
+  right: 0;
+  margin-right: 50px;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 5px;
+}
