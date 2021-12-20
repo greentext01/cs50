@@ -17,7 +17,25 @@ int main(int argc, char *argv[])
         return 1;
     }
 
+    for (size_t i = 0; i < 26; i++)
+    {
+        if (!isalpha(argv[1][i])) {
+            puts("Key must be only alphabetic characters.");
+            return 1;
+        }
+        
+        for(size_t j=i+1; j<strlen(argv[1]); j++)
+        {
+            if(argv[1][i] == argv[1][j])
+            {
+                puts("Key must be only unique characters.");
+                return 1;
+            }
+        }
+    }
+    
     string plaintext = get_string("plaintext: ");
+    
     printf("ciphertext: ");
     for (size_t i = 0; i < strlen(plaintext); i++)
     {
