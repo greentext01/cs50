@@ -1,6 +1,4 @@
-from os import abort, stat
 from flask import Flask
-from flask import render_template
 from flask import request
 from flask import jsonify
 from flask_cors import CORS
