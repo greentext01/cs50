@@ -1,0 +1,12 @@
+textarea {
+    min-height: 400px;
+}
+
+pre {
+    font-size: inherit;
+    font-family: inherit;
+}
+
+.bg-lightgray {
+    background-color: lightgray;
+}
