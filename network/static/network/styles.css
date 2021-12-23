@@ -1,0 +1,11 @@
+.like {
+    font-size: 23px;
+    background-color: inherit;
+    border-style: none;
+}
+
+pre {
+    font-family: inherit;
+    font-size: inherit;
+    margin: 0;
+}
