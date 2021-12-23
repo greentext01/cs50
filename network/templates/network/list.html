@@ -1,0 +1,39 @@
+{% extends "network/layout.html" %}
+{% load static %}
+
+{% block body %}
+
+{% block head %}
+{% endblock %}
+
+{% block posts %}
+
+{% for post in posts %}
+<div class="card m-2">
+    <div class="card-body">
+        <div class="post" data-post="{{ post }}" data-user="{{ user.username }}"
+            data-editable="{% if user == post.owner %}true{% else %}false{% endif %}" data-id="{{ post.pk }}"
+            data-liking="{% if user == post.owner %}true{% else %}false{% endif %}"></div>
+    </div>
+</div>
+{% endfor %}
+
+<nav class="m-3 d-flex justify-content-center">
+    <ul class="pagination">
+        {% if page_obj.has_previous %}
+        <li class="page-item"><a class="page-link" href="?p={{ page_obj.previous_page_number }}">Previous</a></li>
+        {% endif %}
+
+        {% if page_obj.has_next %}
+        <li class="page-item"><a class="page-link" href="?p={{ page_obj.next_page_number }}">Next</a></li>
+        {% endif %}
+    </ul>
+</nav>
+{% endblock %}
+
+{% block foot %}
+{% endblock %}
+
+<script type="text/babel" src="{% static 'network/list.js' %}"></script>
+
+{% endblock %}
