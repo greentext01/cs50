@@ -1,0 +1,46 @@
+{% extends 'list.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block content %}
+    <div class="mt-2">
+        <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                <button class="nav-link active" id="nav-homework-tab" data-bs-toggle="tab" data-bs-target="#nav-homework" type="button" role="tab" aria-controls="nav-homework" aria-selected="true">Create homework</button>
+                <button class="nav-link" id="nav-period-tab" data-bs-toggle="tab" data-bs-target="#nav-period" type="button" role="tab" aria-controls="nav-period" aria-selected="false">Create period</button>
+                <button class="nav-link" id="nav-quiz-tab" data-bs-toggle="tab" data-bs-target="#nav-quiz" type="button" role="tab" aria-controls="nav-quiz" aria-selected="false">Create quiz</button>
+            </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane show active" id="nav-homework" role="tabpanel" aria-labelledby="nav-homework-tab">            
+                <div class="m-3">
+                    <h3>Create homework</h3>
+                    <form action="{% url 'create_homework' %}" method="POST">
+                        {% csrf_token %}
+                        {{ hwform|crispy }}
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+            <div class="tab-pane" id="nav-period" role="tabpanel" aria-labelledby="nav-period-tab">
+                <div class="m-3">
+                    <h3>Create period</h3>
+                    <form action="{% url 'create_period' %}" method="POST">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+            <div class="tab-pane" id="nav-quiz" role="tabpanel" aria-labelledby="nav-quiz-tab">
+                <div id="quiz"></div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block js %}
+    {{ block.super }}
+    <script src="{% static 'createquiz.js' %}" type="text/babel"></script>
+{% endblock js %}

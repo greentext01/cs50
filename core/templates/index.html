@@ -1,0 +1,53 @@
+{% extends 'list.html' %}
+{% load static %}
+{% load auth_extras %}
+
+{% block content %}
+    <div class="mt-3">
+        {% if not request.user|has_group:"Teacher" %}
+            {% if quizzes %}
+                <h3>Quizzes</h3>
+                {% for quiz in quizzes %}
+                    <div class="card my-3">
+                        <h5 class="card-header">{{ quiz.subject }}</h5>
+                        <div class="card-body">
+                            <h6>{{ quiz.name }}</h6>
+                            <p class="text-secondary">Due: {{ quiz.due }}</p>
+                            <a class="btn btn-primary" href="{% url 'quiz' id=quiz.pk %}">Go to quiz</a>
+                        </div>
+                    </div>
+                {% endfor %}
+                
+                <hr>
+            {% endif %}
+        {% endif %}
+    
+        <h3>Homework</h3>
+        <div id="homework"></div>
+    
+        {% if grades %}
+            <hr>
+
+            <h3>Grades</h3>
+            {% for grade in grades %}
+                <div class="card my-3">
+                    <h5 class="card-header">{{ grade.quiz.subject }}</h5>
+                    <div class="card-body">
+                        <h6>{{ grade.quiz.name }}</h6>
+                        {% if request.user|has_group:"Teacher" %}
+                            <p>{{ grade.user }}: {{ grade.grade }}/{{ grade.denominator }}</p>
+                        {% else %}
+                            <p>{{ grade.grade }}/{{ grade.denominator }}</p>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+
+{% endblock content %}
+
+{% block js %}
+    {{ block.super }}
+    <script src="{% static 'index.js' %}" type="text/babel"></script>
+{% endblock js %}

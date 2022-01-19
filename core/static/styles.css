@@ -1,0 +1,26 @@
+.period {
+    border: 3px solid rgb(0,0,0, 0.5);
+    margin-bottom: 3px;
+    border-left-width: 6px;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+}
+
+.period-name {
+    font-size: 20px;
+}
+
+.sub {
+    font-size: 13px;
+}
+
+.background {
+    position: relative;
+    background-color: lightgray;
+    height: 698px;
+}
+
+.asteriskField {
+    display: none;
+}
