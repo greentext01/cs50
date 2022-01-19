@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="m-3">
+    <form action="{% url 'create_accounts' %}" method="POST">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label class="form-label">Paste CSV here:</label>
+            <textarea name="csv" class="form-control" rows="25"></textarea>
+        </div>
+        <input type="submit" value="Submit" class="btn btn-primary">
+    </form>
+</div>
+{% endblock body %}
